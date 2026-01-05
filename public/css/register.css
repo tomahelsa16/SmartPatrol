@@ -1,0 +1,137 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.register-container {
+    width: 100%;
+    max-width: 450px;
+    background-color: #fff;
+    border-radius: 20px; /* Rounded corners for a modern look */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px 30px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.tagline {
+    font-size: 16px;
+    color: #6b6b6b;
+    margin-bottom: 30px;
+}
+
+/* Form Styles */
+.register-form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    color: #333;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Focused input field */
+.form-group input:focus {
+    outline: none;
+    border-color: #2c72b8; /* Blue border on focus */
+    background-color: #fff;
+}
+
+/* Button Styles */
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    background-color: #2c72b8;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button hover */
+.btn-submit:hover {
+    background-color: #255a8c;
+}
+
+/* Links */
+.links {
+    margin-top: 20px;
+}
+
+.links a {
+    color: #2c72b8;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.links a:hover {
+    color: #255a8c;
+}
+
+/* Error Message Styles */
+.error-message p {
+    color: red; /* Warna merah untuk pesan error */
+    font-size: 14px; /* Ukuran font lebih kecil */
+    margin-top: 5px; /* Memberikan sedikit jarak dari input */
+}
+
+/* Password Requirements Style */
+.password-requirements ul {
+    font-size: 14px;
+    color:  #3333338f; /* Warna merah untuk pesan error */
+    margin-top: 5px;
+}
+
+
+/* Error Message Styles */
+.error-message p {
+    color: red; /* Warna merah untuk pesan error */
+    font-size: 14px; /* Ukuran font lebih kecil */
+    margin-top: 5px; /* Memberikan sedikit jarak dari input */
+    text-align: left; /* Pesan rata kiri */
+}
+
+/* Error Message Styles */
+.error {
+    color: red; /* Warna merah untuk pesan error */
+    font-size: 14px; /* Ukuran font lebih kecil */
+    margin-top: 5px; /* Memberikan sedikit jarak dari input */
+    text-align: left; /* Pesan rata kiri */
+}
+

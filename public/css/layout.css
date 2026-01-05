@@ -1,0 +1,273 @@
+/* ======================================================================== */
+/* 01. GLOBAL & LAYOUT */
+/* ======================================================================== */
+:root {
+    --color-primary: #2c72b8;
+    --color-accent: #ffffff;
+    --color-bg-light: #f4f6f9;
+    --color-bg-dark: #2c72b8;
+    --color-text-dark: #34495e;
+    --color-text-light: #ffffff;
+    --shadow-base: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --radius-base: 10px;
+    --transition-base: 0.3s;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-bg-light);
+    color: var(--color-text-dark);
+}
+
+.app-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* ======================================================================== */
+/* 02. SIDEBAR */
+/* ======================================================================== */
+.sidebar {
+    width: 250px;
+    background-color: var(--color-bg-dark);
+    color: var(--color-text-light);
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.15);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.logo-area {
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgb(255, 255, 255, 0.500);
+}
+
+.logo-area i {
+    font-size: 2.5em;
+    color: var(--color-accent);
+}
+
+.logo-area h2 {
+    margin: 10px 0 0;
+    font-size: 1.25em;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* Navigation */
+.main-nav {
+    flex-grow: 1;
+    padding: 20px 0;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Base style */
+.main-nav li a {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-size: 0.95em;
+    border-radius: 0;
+    transition: all var(--transition-base);
+    border-left: 4px solid transparent;
+}
+
+.main-nav li a i {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.main-nav li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Active */
+.main-nav li.active > a:not(.submenu-toggle) {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-left: 4px solid var(--color-accent);
+    font-weight: 600;
+}
+
+/* Logout */
+.logout-section {
+    padding: 20px;
+    border-top: 2px solid rgba(255, 255, 255, 0.500);
+}
+
+.btn-logout {
+    width: 100%;
+    background-color: #191a21;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: var(--radius-base);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color var(--transition-base);
+}
+
+.btn-logout:hover {
+    background-color: #255a8c;
+}
+
+/* ======================================================================== */
+/* 03. MAIN CONTENT */
+/* ======================================================================== */
+.main-content {
+    flex-grow: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: right;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+}
+
+.top-header h1 {
+    font-size: 1.8em;
+    color: var(--color-primary);
+    margin: 0;
+}
+
+.user-info {
+    font-weight: 500;
+}
+
+/* ======================================================================== */
+/* SUBMENU */
+/* ======================================================================== */
+
+.menu-item > a {
+    border-radius: 0;
+    border-left: 4px solid transparent;
+}
+
+.menu-item > a:hover {
+    background-color: rgba(255,255,255,0.1);
+    padding-left: 20px;
+}
+
+.submenu-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.submenu-toggle i {
+    margin-right: 10px;
+}
+
+.submenu-toggle .arrow {
+    margin-left: auto;
+    transition: transform 0.3s ease-out;
+}
+
+.menu-item.open > .submenu-toggle .arrow {
+    transform: rotate(90deg);
+}
+
+/* 🔥 FIX SUBMENU FLICKER — gunakan display none */
+.submenu {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    background-color: #2663a1;
+    border-left: 4px solid transparent;
+
+    display: none;   /* JS slideDown akan handle */
+    overflow: hidden;
+}
+
+/* Submenu items */
+.submenu li a {
+    padding-left: 40px;
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.submenu li a:hover {
+    background-color: #1f5a8d;
+}
+
+/* Aktif */
+.submenu li a.active {
+    background-color: #1f5a8d;
+    font-weight: 600;
+    padding-left: 36px;
+}
+
+/* Parent active/open */
+.menu-item.open > .submenu-toggle,
+.menu-item.active > .submenu-toggle {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-left: 4px solid var(--color-accent);
+}
+
+/* ======================================================================== */
+/* 05. RESPONSIVE */
+/* ======================================================================== */
+@media (max-width: 1024px) {
+    .dashboard-grid { grid-template-columns: 1fr 1.5fr; }
+}
+
+@media (max-width: 768px) {
+    .app-wrapper { flex-direction: column; }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 15px 0;
+    }
+    .logo-area { flex-direction: row; justify-content: space-between; align-items: center; padding: 0 20px 15px; }
+    .logo-area h2 { font-size: 1.5em; margin: 0; }
+    .logo-area i { font-size: 1.8em; margin-right: 0; }
+    .main-nav { display: none; }
+    .main-content { padding: 20px; }
+    .top-header { flex-direction: column; align-items: flex-start; }
+    .dashboard-grid { grid-template-columns: 1fr; }
+    .logout-section { display: none; }
+}
+
+body {
+    overflow-x: hidden;
+}
+
+body.no-scroll {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.select2-container,
+.select2-dropdown {
+    z-index: 999999 !important;
+}

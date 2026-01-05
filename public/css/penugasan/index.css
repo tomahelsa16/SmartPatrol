@@ -1,0 +1,427 @@
+/* ================================
+   GLOBAL STYLE (INDEX PAGE)
+================================ */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    padding-top: 0;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #173a5c;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ================================
+   CARD
+================================ */
+.card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    margin-top: 15px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+}
+
+/* ================================
+   HEADER
+================================ */
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.table-header h3 {
+    margin: 0;
+}
+
+/* ================================
+   ADD BUTTON
+================================ */
+.btn-add {
+    background: #173a5c;
+    color: #ffffff;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: .2s;
+    font-weight: 500;
+}
+
+.btn-add:hover {
+    background: #10283e;
+}
+
+/* ================================
+   TABLE STRUCTURE
+================================ */
+.robot-table-container {
+    overflow-x: auto;
+}
+
+.robot-status-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.robot-status-table th {
+    background-color: #173a5c;
+    color: #ffffff;
+    padding: 14px;
+    border: 1px solid #b4b4b4;
+}
+
+.robot-status-table td {
+    padding: 14px;
+    border: 1px solid #b4b4b4;
+}
+
+/* ================================
+   STATUS COLORS
+================================ */
+.txt-progress {
+    color: #e03131;
+    font-weight: 600;
+}
+
+.txt-waiting {
+    color: #e6b800;
+    font-weight: 600;
+}
+
+.txt-done {
+    color: #2ecc71;
+    font-weight: 600;
+}
+
+/* ================================
+   ACTION BUTTONS
+================================ */
+.action-row {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.action-row button {
+    width: 95px;
+    padding: 8px 0;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: 0.15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.action-row button i {
+    font-size: 14px;
+}
+
+/* =============== SOFT TABLE BUTTONS =============== */
+.btn-start {
+    background: #cdffde !important;
+    color: #247647 !important;
+    border-color: #9cfbc0 !important;
+    box-shadow: 0 2px 4px rgba(0,150,60,0.15);
+    margin-bottom: 10px;
+}
+
+.btn-start:hover {
+    background: #8be2a8 !important;
+}
+
+.btn-done {
+    background: #e3f0ff !important;
+    color: #1b4f72 !important;
+    border-color: #bcd8ff !important;
+    box-shadow: 0 2px 4px rgba(0,110,255,0.15);
+    margin-bottom: 10px;
+}
+
+.btn-done:hover {
+    background: #87bbff !important;
+}
+
+.btn-cancel {
+    background: #fde2e2 !important;
+    color: #a31919 !important;
+    border-color: #f5b5b5 !important;
+    box-shadow: 0 2px 4px rgba(255, 80, 80, 0.2);
+    margin-bottom: 10px;
+}
+
+.btn-cancel:hover {
+    background: #ff9f9f !important;
+}
+
+.btn-detail {
+    background: #e3f0ff !important;
+    color: #1b4f72 !important;
+    border: 1px solid #bcd8ff;
+    box-shadow: 0 2px 4px rgba(0,160,160,0.15);
+}
+
+.btn-detail:hover {
+    background: #87bbff !important;
+}
+
+.btn-edit {
+    background: #ffe9a9 !important;
+    color: #8a6d00 !important;
+    border: 1px solid #8a6d00;
+    box-shadow: 0 2px 4px rgba(255,200,0,0.15);
+}
+
+.btn-edit:hover {
+    background: #ffce6b !important;
+}
+
+.btn-delete {
+    background: #fde2e2 !important;
+    color: #a31919 !important;
+    border: 1px solid #f5b5b5;
+    box-shadow: 0 2px 4px rgba(255,80,80,0.2);
+}
+
+.btn-delete:hover {
+    background: #ff9f9f !important;
+}
+
+/* ================================
+   MODAL BACKDROP
+================================ */
+.custom-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(4px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+
+/* ================================
+   POPUP BASE STYLE
+================================ */
+.custom-modal .modal-content {
+    background: #ffffff;
+    width: 440px;
+    padding: 28px;
+    border-radius: 14px;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.20);
+    animation: fadeUp 0.22s ease;
+    position: relative;
+}
+
+@keyframes fadeUp {
+    from {
+        transform: translateY(25px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* ================================
+   CLOSE BUTTON
+================================ */
+.modal-x {
+    font-size: 22px;
+    font-weight: 700;
+    background: none;
+    border: none;
+    color: #555;
+    cursor: pointer;
+    transition: 0.2s ease;
+    text-align: right;
+}
+
+.modal-x:hover {
+    color: #000;
+}
+
+/* ================================
+   FIXED: HEADER INSIDE SMALL MODAL
+================================ */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.modal-header h3 {
+    margin: 0 !important;
+}
+
+/* ================================
+   EDIT MODAL
+================================ */
+.edit-modal {
+    width: 700px !important;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 30px !important;
+}
+
+.edit-modal h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.edit-modal label {
+    font-size: 14px;
+    font-weight: 600;
+    display: block;
+    margin-top: 12px;
+    color: #173a5c;
+}
+
+.edit-modal input[type="text"],
+.edit-modal input[type="datetime-local"],
+.edit-modal select {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #c9c9c9;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.edit-modal input:disabled {
+    background: #efefef;
+}
+
+.edit-modal .form-group {
+    margin-bottom: 10px;
+}
+
+.btn-save-blue {
+    background: #1b4f72;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 18px;
+    transition: 0.2s ease;
+}
+
+.btn-save-blue:hover {
+    background: #2874a6;
+}
+
+.edit-modal .modal-x {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+}
+
+/* ================================
+   DETAIL MODAL
+================================ */
+.detail-modal {
+    width: 600px !important;
+    padding: 28px !important;
+}
+
+.detail-modal h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.detail-modal label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 14px;
+    margin-bottom: 6px;
+    color: #173a5c;
+}
+
+.detail-modal .detail-box {
+    width: 100%;
+    background: #f7f7f7;
+    border-radius: 10px;
+    padding: 10px 14px;
+    border: 1px solid #d4d4d4;
+    font-size: 14px;
+}
+
+.detail-modal ul {
+    margin-top: 8px;
+    padding-left: 18px;
+}
+
+.detail-modal ul li {
+    margin-bottom: 4px;
+    font-size: 14px;
+}
+
+/* Pindahkan tombol X ke pojok kanan untuk detail modal */
+.detail-modal .modal-x {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+}
+
+/* ================================
+   SMALL MODAL
+================================ */
+.small-modal {
+    width: 420px !important;
+    padding: 26px !important;
+    border-radius: 14px;
+}
+
+.small-modal h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 14px;
+    color: #173a5c;
+}
+
+.small-modal p {
+    font-size: 14px;
+    margin-bottom: 18px;
+    color: #444;
+}
+
+.small-modal button,
+.small-modal form button {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 10px;
+    transition: 0.2s ease;
+}

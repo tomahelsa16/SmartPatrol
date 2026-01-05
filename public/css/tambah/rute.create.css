@@ -1,0 +1,207 @@
+/* =========================================================
+   CREATE PAGE — TAMBAH RUTE (FINAL FIXED VERSION)
+========================================================= */
+
+.container {
+    font-family: 'Poppins', sans-serif;
+    background: #fff;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+
+    /* perbaikan: jarak diperkecil */
+    margin-top: 0 !important;
+
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header h3 {
+    font-size: 21px;
+    font-weight: 700;
+    color: #173a5c;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 5px;
+    padding-top: 0;
+}
+
+/* =========================================================
+   FORM CARD
+========================================================= */
+.edit-form {
+    background: #fff;
+    padding: 10px;
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+    margin-top: 10px;
+
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-group {
+    margin-bottom: 5px;
+}
+
+.form-group label {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #173a5c;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #cccccc;
+    background: #fafafa;
+    font-size: 14px;
+    transition: .2s;
+}
+
+.form-group input:focus {
+    border-color: #1c577f;
+    background: #fff;
+    box-shadow: 0 0 0 2px rgba(28, 87, 127, 0.2);
+}
+
+/* =========================================================
+   LATITUDE + LONGITUDE SIDE BY SIDE
+========================================================= */
+
+.coord-row {
+    display: flex;
+    gap: 20px;
+}
+
+.coord-row .form-group {
+    flex: 1;
+}
+
+/* =========================================================
+   SEARCH BOX
+========================================================= */
+.map-search-box {
+    width: 100%;
+    padding: 11px 14px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    background: #fafafa;
+    font-size: 14px;
+}
+
+/* =========================================================
+   MAP AREA
+========================================================= */
+#create_map {
+    height: 330px !important;
+    border-radius: 14px;
+    border: 1px solid #dcdcdc;
+}
+
+small {
+    color: #888;
+    font-size: 12px;
+    display: block;
+    margin-top: 5px;
+}
+
+/* =========================================================
+   GPS BUTTON
+========================================================= */
+.btn-save {
+    margin-top: 10px;
+    margin-bottom: 15px;
+    background: #1b4f72;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 10px;
+    width: 100%;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.btn-save:hover {
+    background: #2874a6;
+}
+
+/* =========================================================
+   FOOTER BUTTONS
+========================================================= */
+.edit-footer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.btn-cancel-page {
+    background: #a31919;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: .2s;
+}
+
+.btn-cancel-page:hover {
+    background: #be6060;
+}
+
+.btn-save-page {
+    background: #1b4f72;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: .2s;
+}
+
+.btn-save-page:hover {
+    background: #2874a6;
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE FRIENDLY
+========================================================= */
+@media (max-width: 768px) {
+
+    .container {
+        padding: 18px;
+    }
+
+    .edit-form {
+        padding: 20px;
+    }
+
+    /* Lat-long kembali 1 kolom */
+    .coord-row {
+        flex-direction: column;
+    }
+
+    #create_map {
+        height: 250px;
+    }
+
+    .edit-footer {
+        flex-direction: column;
+    }
+
+    .btn-cancel-page,
+    .btn-save-page {
+        width: 100%;
+        text-align: center;
+    }
+}

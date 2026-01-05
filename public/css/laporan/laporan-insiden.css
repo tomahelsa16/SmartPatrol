@@ -1,0 +1,227 @@
+/* ============================
+    GENERAL & CONTAINER
+============================ */
+.container-laporan {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    margin-top: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ============================
+    HEADER
+============================ */
+.header-laporan {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.header-laporan h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #173a5c;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-add {
+    background: #173a5c;
+    color: #ffffff;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: .2s;
+    font-weight: 500;
+}
+
+.btn-add:hover { background: #0a1f33; }
+
+/* ============================
+    TABLE STYLE
+============================ */
+.table-insiden {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.table-insiden th, 
+.table-insiden td {
+    padding: 14px;
+    border: 1px solid #b4b4b4;
+    font-size: 14px;
+    text-align: center;
+}
+
+.table-insiden th {
+    background: #173a5c;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Custom Column Widths */
+.table-insiden th:nth-child(1), .table-insiden td:nth-child(1),
+.table-insiden th:nth-child(2), .table-insiden td:nth-child(2),
+.table-insiden th:nth-child(4), .table-insiden td:nth-child(4) {
+    width: 180px;
+    white-space: nowrap;
+}
+
+.table-insiden th:nth-child(4), .table-insiden td:nth-child(4) { width: 300px; }
+.table-insiden th:nth-child(3), .table-insiden td:nth-child(3) { width: auto; }
+
+/* ============================
+    AKSI COLUMN & BUTTONS
+============================ */
+.action-column {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-edit, .btn-delete {
+    width: 95px;
+    padding: 8px 0;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    border: none; /* Menghilangkan border ganda */
+}
+
+.btn-edit {
+    background: #ffe9a9 !important;
+    color: #8a6d00 !important;
+    box-shadow: 0 2px 4px rgba(255,200,0,0.15);
+}
+
+.btn-delete {
+    background: #fde2e2 !important;
+    color: #a31919 !important;
+    box-shadow: 0 2px 4px rgba(255,80,80,0.2);
+}
+
+.btn-edit:hover { background: #ffce6b !important; }
+.btn-delete:hover { background: #ff9f9f !important; }
+
+/* ============================
+    MODAL SYSTEM (General)
+============================ */
+.modal-backdrop, #deleteModal {
+    position: fixed;
+    inset: 0; /* Menggantikan top, left, width, height */
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(4px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-box, .delete-box {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    animation: fadeIn .25s ease-in-out;
+}
+
+.modal-box { width: 420px; }
+.delete-box { width: 350px; }
+
+.modal-header, .delete-header {
+    font-size: 18px;
+    font-weight: 600;
+    color: #173a5c;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-close, .delete-close {
+    cursor: pointer;
+    font-size: 22px;
+    color: #333;
+}
+
+/* ============================
+    FORM & ANIMATION
+============================ */
+.modal-form input, .modal-form select, .modal-form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+}
+
+.modal-btn, .delete-btn {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.modal-btn { background: #173a5c; color: #fff; }
+.modal-btn:hover { background: #0f2c45; }
+
+.delete-btn { background: #f8d7da; color: #a12622; }
+.delete-btn:hover { background: #f5c2c7; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* =========================================================
+   MODAL FOOTER
+========================================================= */
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 18px;
+    padding-top: 10px;
+}
+
+.btn-save,
+.btn-cancel {
+    padding: 10px 18px !important;
+    border-radius: 8px !important;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-save {
+    background: #1b4f72;
+    color: white;
+}
+.btn-save:hover {
+    background: #2874a6;
+}
+
+.btn-cancel {
+    background: #a31919;
+    color: white;
+}
+.btn-cancel:hover {
+    background: #c63e3e;
+}

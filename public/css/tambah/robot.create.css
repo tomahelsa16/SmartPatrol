@@ -1,0 +1,225 @@
+/* ============================================================
+FORM CONTAINER
+============================================================ */
+.robot-container {
+    font-family: 'Poppins', sans-serif;
+    background: #fff;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+
+    /* perbaikan: jarak diperkecil */
+    margin-top: 0 !important;
+
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.header h3 {
+    font-size: 21px;
+    font-weight: 700;
+    color: #173a5c;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 5px;
+    padding-top: 0;
+}
+
+/* ============================================================
+FORM WRAPPER
+============================================================ */
+.robot-form-page {
+    margin-top: 20px;
+}
+
+/* Label */
+.robot-form-page label,
+.feature-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #173a5c;
+    margin-bottom: 6px;
+}
+
+/* ============================================================
+INPUT TEXT
+============================================================ */
+.robot-form-page input[type="text"] {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid #d6d9de;
+    background: #f8fafc;
+    font-size: 14px;
+    transition: .2s ease;
+}
+
+.robot-form-page input[type="text"]:focus {
+    border-color: #2c72b8;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(44,114,184,0.15);
+    outline: none;
+}
+
+/* ============================================================
+SECTION TITLE
+============================================================ */
+.section-title {
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #123b70;
+}
+
+/* ============================================================
+FEATURE SECTION (Grid)
+============================================================ */
+.feature-section {
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+}
+
+/* Feature Card */
+.feature-group {
+    background: #f9fbff;
+    padding: 18px;
+    border-radius: 12px;
+    border: 1px solid #e3e6eb;
+    transition: .25s ease;
+}
+
+.feature-group:hover {
+    border-color: #2c72b8;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+}
+
+/* ============================================================
+SELECT2 MODERN STYLE
+============================================================ */
+.select2-container {
+    width: 100% !important;
+}
+
+/* CLEAN BOX SELECT — tanpa garis abu2 */
+.select2-container--default .select2-selection--multiple {
+    min-height: 48px !important;
+    padding: 10px 12px !important;
+
+    border-radius: 10px !important;
+    background: #ffffff !important;
+
+    border: none !important;          /* ❌ HILANGKAN BORDER */
+    box-shadow: none !important;      /* ❌ HILANGKAN SHADOW */
+}
+
+/* Focus Style */
+.select2-container--default.select2-container--focus .select2-selection--multiple {
+    border: 1px solid #2c72b8 !important;
+    box-shadow: 0 0 0 3px rgba(44,114,184,0.20) !important;
+}
+
+/* ============================================================
+TAG STYLE
+============================================================ */
+.select2-selection__choice {
+    background: #2c72b8 !important;
+    color: #fff !important;
+
+    border-radius: 18px !important;
+
+    padding: 6px 14px 6px 26px !important;
+    margin: 4px 6px !important;
+
+    font-size: 13px !important;
+    font-weight: 600 !important;
+
+    border: none !important;
+    position: relative !important;
+
+    line-height: 1 !important;       /* ✔ membuat X sejajar tengah */
+}
+
+/* ICON REMOVE (X) — sejajar tengah */
+.select2-selection__choice__remove {
+    position: absolute !important;
+    left: 9px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;  /* ✔ tengah sempurna */
+
+    color: #ffffff !important;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    border: none !important;
+
+    cursor: pointer;
+}
+
+.select2-selection__choice__remove:hover {
+    color: #ffdede !important;
+}
+
+/* ============================================================
+DROPDOWN MENU
+============================================================ */
+.select2-dropdown {
+    border-radius: 10px !important;
+    border: 1px solid #d5dae0 !important;
+}
+
+.select2-container--default .select2-results__option--highlighted {
+    background: #173a5c !important;
+    color: #fff !important;
+}
+
+/* ============================================================
+FORM FOOTER BUTTONS
+============================================================ */
+.form-footer {
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+/* Cancel */
+.btn-cancel-page {
+    background: #a31919;
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: .2s ease;
+}
+
+.btn-cancel-page:hover {
+    background: #c63e3e;
+    color: #fff;
+}
+
+/* Save */
+.btn-save-page {
+    background: #1b4f72;
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: .2s ease;
+}
+
+.btn-save-page:hover {
+    background: #2874a6;
+}
+
+/* Error */
+.error-message {
+    margin-top: 5px;
+    font-size: 13px;
+    color: #d63131;
+}

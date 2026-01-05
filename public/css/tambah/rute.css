@@ -1,0 +1,397 @@
+/* =========================================================
+   WRAPPER CONTAINER (DAFTAR ROUTE)
+========================================================= */
+.container {
+    font-family: 'Poppins', sans-serif;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    margin-top: 15px;
+}
+
+/* =========================================================
+   HEADER (TITLE + BUTTON)
+========================================================= */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.header h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #173a5c;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-add {
+    background: #173a5c;
+    color: #ffffff;
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: .2s;
+    font-weight: 500;
+}
+.btn-add:hover {
+    background: #434a52;
+}
+
+/* =========================================================
+   TABLE STYLE
+========================================================= */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    border: 1px solid #b4b4b4;
+}
+
+.table thead th {
+    background: #173a5c;
+    color: #ffffff;
+    padding: 14px;
+    font-weight: 600;
+    font-size: 14px;
+    text-align: center;
+    border: 1px solid #b4b4b4;
+}
+
+.table tbody td {
+    padding: 14px;
+    text-align: center;
+    border: 1px solid #b4b4b4;
+    color: #333;
+}
+
+.table th:first-child,
+.table td:first-child {
+    width: 80px !important;
+}
+
+.table th:last-child,
+.table td:last-child {
+    width: 350px !important;
+}
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+.aksi-column a,
+.aksi-column button {
+    padding: 6px 14px;
+    font-size: 13px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: 0.2s;
+    font-weight: 500;
+}
+
+.aksi-column i {
+    font-size: 14px;
+}
+
+/* Detail */
+.btn-detail {
+    background: #e3f0ff;
+    border-color: #bcd8ff;
+    color: #1b4f72;
+}
+.btn-detail:hover {
+    background: #87bbff;
+}
+
+/* Hapus */
+.btn-delete {
+    background: #fde2e2;
+    border-color: #f5b5b5;
+    color: #a31919;
+}
+.btn-delete:hover {
+    background: #ff9f9f;
+}
+
+/* Edit */
+.btn-edit {
+    background: #ffe9a9;
+    border-color: #f3e3a3;
+    color: #8a6d00;
+}
+.btn-edit:hover {
+    background: #ffce6b;
+}
+
+/* =========================================================
+   MODAL BASE
+========================================================= */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    backdrop-filter: blur(4px);
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    color: #173a5c;
+}
+
+.close {
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    transition: 0.2s;
+}
+.close:hover {
+    color: #000;
+}
+
+
+/* =========================================================
+   FORM STYLE IN MODAL
+========================================================= */
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: block;
+    font-size: 14px;
+    color: #173a5c;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #fafafa;
+    font-size: 14px;
+}
+
+/* Input berdampingan */
+.edit-modal-row {
+    display: flex;
+    gap: 15px;
+}
+.edit-modal-row .form-group {
+    flex: 1;
+}
+
+/* =========================================================
+   SEARCH BOX (Improved)
+========================================================= */
+.map-search-box {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 1px solid #cfcfcf;
+    background: #f9f9f9;
+    font-size: 14px;
+    margin-bottom: 12px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.map-search-box:hover {
+    background: #fff;
+    border-color: #b5b5b5;
+}
+
+.map-search-box:focus {
+    background: #fff;
+    border-color: #1c74d8;
+    box-shadow: 0 0 0 3px rgba(28,116,216,0.25);
+}
+
+.map-search-box::placeholder {
+    color: #888;
+    font-size: 13px;
+}
+
+/* =========================================================
+   MAP
+========================================================= */
+#edit_map,
+#detail_map {
+    border-radius: 10px;
+    border: 1px solid #dcdcdc;
+    margin-top: 6px;
+}
+
+/* =========================================================
+   MODAL FOOTER
+========================================================= */
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 18px;
+    padding-top: 10px;
+}
+
+.btn-save,
+.btn-cancel {
+    padding: 10px 18px !important;
+    border-radius: 8px !important;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-save {
+    background: #1b4f72;
+    color: white;
+}
+.btn-save:hover {
+    background: #2874a6;
+}
+
+.btn-cancel {
+    background: #a31919;
+    color: white;
+}
+.btn-cancel:hover {
+    background: #c63e3e;
+}
+
+/* Tombol GPS */
+.btn-save.gps-btn {
+    width: 100%;
+    margin-bottom: 12px;
+    background: #1b4f72;
+}
+
+/* =========================================================
+   DETAIL PAGE
+========================================================= */
+.detail-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    margin-top: 10px;
+}
+
+.detail-row {
+    margin-bottom: 15px;
+}
+
+.detail-row label {
+    font-weight: 600;
+    color: #173a5c;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.detail-row p {
+    background: #f7f9fc;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #d7d7d7;
+}
+
+.detail-footer {
+    text-align: right;
+}
+
+.btn-back {
+    background: #173a5c;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.modal-backdrop, #deleteModal {
+    position: fixed;
+    inset: 0; /* Menggantikan top, left, width, height */
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(4px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-box, .delete-box {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    animation: fadeIn .25s ease-in-out;
+}
+
+.modal-box { width: 420px; }
+.delete-box { width: 350px; }
+
+.modal-header, .delete-header {
+    font-size: 18px;
+    font-weight: 600;
+    color: #173a5c;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-close, .delete-close {
+    cursor: pointer;
+    font-size: 22px;
+    color: #333;
+}
+
+/* ============================
+    FORM & ANIMATION
+============================ */
+.modal-form input, .modal-form select, .modal-form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+}
+
+.modal-btn, .delete-btn {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.modal-btn { background: #173a5c; color: #fff; }
+.modal-btn:hover { background: #0f2c45; }
+
+.delete-btn { background: #f8d7da; color: #a12622; }
+.delete-btn:hover { background: #f5c2c7; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}

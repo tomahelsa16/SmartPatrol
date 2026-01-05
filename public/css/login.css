@@ -1,0 +1,142 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 450px;
+    background-color: #fff;
+    border-radius: 20px; /* Mengubah menjadi lebih bulat */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px 30px;
+    text-align: center;
+}
+
+.login-card {
+    width: 100%;
+    border-radius: 20px; /* Menambahkan border-radius pada card untuk sudut yang lebih bulat */
+}
+
+.login-header {
+    margin-bottom: 30px;
+}
+
+.logo-icon {
+    font-size: 100px;
+    color: #2c72b8;
+    margin-bottom: 0;
+}
+
+h3 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.tagline {
+    font-size: 16px;
+    color: #6b6b6b;
+    margin-bottom: 20px;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 20px; /* Menambah jarak antar input */
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    color: #333;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Fokus pada input */
+.form-group input:focus {
+    outline: none;
+    border-color: #2c72b8; /* Fokus border warna biru */
+    background-color: #fff;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 15px;
+    background-color: #2c72b8;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Tombol hover */
+.btn-login:hover {
+    background-color: #255a8c; /* Warna lebih gelap pada hover */
+}
+
+/* Footer Links */
+.footer-links {
+    display: block; /* Menjadikan container block untuk memastikan elemen berada di bawah satu sama lain */
+    margin-top: 5x; /* Mengurangi jarak antara footer dan tombol login */
+    font-size: 15px; /* Ukuran font yang konsisten */
+    color: #6b6b6b;
+    text-align: center; /* Membuat teks rata tengah */
+}
+
+.footer-link,
+.register-link {
+    margin-bottom: 0px; /* Menghapus jarak antara kedua link */
+}
+
+.footer-link a,
+.register-link a {
+    color: #2c72b8;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 600;
+}
+
+/* Hover state untuk kedua link */
+.footer-link a:hover,
+.register-link a:hover {
+    color: #6b6b6b; /* Warna lebih gelap saat hover */
+}
+
+.register-link a {
+    color: #2c72b8;
+}
+
+.register-link a:hover {
+    color: #6b6b6b; /* Warna lebih gelap saat hover */
+}
+
+/* Styles for error messages */
+.error-message p {
+    color: red; /* Warna merah untuk pesan error */
+    font-size: 14px; /* Ukuran font lebih kecil */
+    margin-top: 5px; /* Memberikan sedikit jarak dari input */
+}
