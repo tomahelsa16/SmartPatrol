@@ -158,10 +158,10 @@
     <div class="modal-backdrop" id="deleteModal">
         <div class="delete-box">
             <div class="delete-header">
-                <span>Hapus Rute?</span>
+                <span>Hapus Data Rute?</span>
                 <span class="delete-close" onclick="closeDeleteModal()">&times;</span>
             </div>
-            <p class="delete-text">Data ini tidak bisa dikembalikan.</p>
+            <p class="delete-text">Data rute ini tidak bisa dipulihkan setelah dihapus.</p>
             <form id="deleteForm" method="POST">
                 @csrf @method('DELETE')
                 <button type="submit" class="delete-btn">Hapus</button>

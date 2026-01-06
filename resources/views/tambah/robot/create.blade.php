@@ -12,7 +12,7 @@
 <div class="robot-container">
 
     <div class="header">
-        <h3><i class="fas fa-robot"></i> Tambah Robot</h3>
+        <h3><i class="fas fa-robot"></i> Tambah Data Robot</h3>
     </div>
 
     <form action="{{ route('robot.store') }}" method="POST" class="robot-form-page">

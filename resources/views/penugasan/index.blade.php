@@ -119,7 +119,7 @@
                             <button class="modal-x" onclick="closeModal('modalMulai{{ $p->id }}')">×</button>
                         </div>
 
-                        <p>Robot akan mulai menjalankan rute.</p>
+                        <p>Robot akan mulai beroperasi.</p>
 
                         <form action="{{ route('penugasan.mulai', $p->id) }}" method="POST">
                             @csrf
@@ -182,7 +182,7 @@
                             <button class="modal-x" onclick="closeModal('modalHapus{{ $p->id }}')">×</button>
                         </div>
 
-                        <p>Data ini tidak bisa dikembalikan.</p>
+                        <p>Data ini tidak bisa dipulihkan setelah dihapus.</p>
 
                         <form action="{{ route('penugasan.hapus', $p->id) }}" method="POST">
                             @csrf
@@ -228,7 +228,7 @@
                                 </div>
                             @endforeach
 
-                            <button type="submit" class="btn-save-blue">Simpan Perubahan</button>
+                            <button type="submit" class="btn-save-blue">Simpan</button>
                         </form>
                     </div>
                 </div>

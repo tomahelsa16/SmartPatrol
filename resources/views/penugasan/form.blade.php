@@ -4,7 +4,6 @@
 @section('header-title', 'Form Tambah Penugasan')
 
 @section('styles')
-    {{-- Menggunakan CSS yang sudah diseragamkan --}}
     <link rel="stylesheet" href="{{ asset('css/penugasan/form.css') }}">
 @endsection
 
@@ -14,12 +13,18 @@
         <h3><i class="fas fa-tasks"></i> Tambah Penugasan Baru</h3>
     </div>
 
+    @if ($errors->any())
+        <div class="alert alert-danger" style="color: red; margin-bottom: 20px;">
+            <ul>@foreach ($errors->all() as $error) <li>{{ $error }}</li> @endforeach</ul>
+        </div>
+    @endif
+
     <form class="edit-form" action="{{ route('penugasan.store') }}" method="POST">
         @csrf
 
         {{-- ========== ROBOT ========== --}}
         <div class="form-group">
-            <label>ID Robot</label>
+            <label>Robot</label>
             <select name="robot_id" class="form-control" required>
                 <option value="" disabled selected>-- Pilih Robot --</option>
                 @foreach ($robots as $r)
@@ -29,8 +34,8 @@
         </div>
 
         {{-- ========== JUMLAH TITIK ========== --}}
-        <div class="form-group">
-            <label>Berapa Titik Lokasi?</label>
+        <div class="form-group" style="margin-bottom: 5px;">
+            <label>Rute</label>
             <select id="jumlah_titik" class="form-control" required>
                 <option value="" disabled selected>-- Pilih Jumlah Titik (Minimal 3) --</option>
                 <option value="3">3 Titik</option>
@@ -41,6 +46,10 @@
             <small class="helper-text">*Tentukan jumlah rute yang akan dilewati robot.</small>
         </div>
 
+        {{-- ========== AREA DINAMIS RUTE (TEMPAT DROPDOWN MUNCUL) ========== --}}
+        <div id="dynamic-rute-area" class="area-grid-dynamic" style="display: none; margin-top: 10px;">
+        </div>
+
         {{-- ========== WAKTU ========== --}}
         <div class="form-group mt-3">
             <label> Waktu Mulai Operasional</label>
@@ -49,14 +58,9 @@
 
         {{-- ========== BUTTONS ========== --}}
         <div class="edit-footer">
-            <a href="{{ route('penugasan') }}" class="btn-cancel-page">
-                Batal
-            </a>
-            <button type="submit" class="btn-save-page">
-                Simpan
-            </button>
+            <a href="{{ route('penugasan') }}" class="btn-cancel-page">Batal</a>
+            <button type="submit" class="btn-save-page">Simpan</button>
         </div>
-
     </form>
 </div>
 @endsection
@@ -69,32 +73,27 @@
         let jumlah = parseInt(this.value);
         let container = document.getElementById('dynamic-rute-area');
 
+        // Reset dan tampilkan kontainer
         container.innerHTML = '';
+        
+        if (isNaN(jumlah) || jumlah < 3) {
+            container.style.display = 'none';
+            return;
+        }
 
-        if (jumlah < 3) return;
+        container.style.display = 'grid';
 
         for (let i = 1; i <= jumlah; i++) {
-            let label = "Titik " + i;
-            let icon = "fa-map-pin";
-            
-            if (i === 1) {
-                label += " (Mulai)";
-                icon = "fa-play-circle";
-            }
-            if (i === jumlah) {
-                label += " (Akhir)";
-                icon = "fa-flag-checkered";
-            }
-
-            container.innerHTML += `
-                <div class="form-group">
-                    <label><i class="fas ${icon}"></i> ${label}</label>
-                    <select name="titik_${i}" class="form-control" required>
-                        <option value="" disabled selected>-- Pilih ${label} --</option>
+            // Template untuk setiap pilihan rute menggunakan struktur yang mendukung CSS area-grid-dynamic
+            let card = `
+                <div class="form-group" style="margin-bottom: 0;">
+                    <select name="rute_ids[]" class="form-control" required>
+                        <option value="" disabled selected>Lokasi Ke-${i}</option>
                         ${ruteData.map(r => `<option value="${r.id}">${r.nama_tempat}</option>`).join("")}
                     </select>
                 </div>
             `;
+            container.innerHTML += card;
         }
     });
 </script>

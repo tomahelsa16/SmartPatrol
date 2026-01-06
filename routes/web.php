@@ -8,6 +8,7 @@ use App\Http\Controllers\RuteController;
 use App\Http\Controllers\PenugasanController;
 use App\Http\Controllers\InsidenController;
 use App\Http\Controllers\LaporanKondisiController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,7 +35,7 @@ Route::middleware('guest')->group(function () {
 ================================ */
 Route::middleware('auth')->group(function () {
     Route::post('logout', [AuthController::class, 'logout'])->name('logout');
-    Route::get('/dashboard', function () {return view('dashboard.index');})->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     /* ------------------------------
        MENU UTAMA

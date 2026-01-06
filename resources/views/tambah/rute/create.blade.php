@@ -15,7 +15,7 @@
     <div class="container">
 
         <div class="header">
-            <h3><i class="fas fa-route"></i> Tambah Rute</h3>
+            <h3><i class="fas fa-route"></i> Tambah Data Rute</h3>
         </div>
 
         <form action="{{ route('rute.store') }}" method="POST" class="edit-form">

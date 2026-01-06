@@ -42,25 +42,10 @@ class PenugasanController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'robot_id'          => 'required',
+            'robot_id'          => 'required|exists:robots,id',
             'waktu_operasional' => 'required|date',
+            'rute_ids'          => 'required|array|min:3', // Menangkap input rute_ids[]
         ]);
-
-        // Kumpulkan semua titik_* yang diisi dari form (titik_1, titik_2, ... dst)
-        $ruteIds = [];
-        for ($i = 1; $i <= 10; $i++) { // batas aman 10 titik
-            $val = $request->input("titik_{$i}");
-            if (!empty($val)) {
-                $ruteIds[] = $val;
-            }
-        }
-
-        // Minimal 3 titik
-        if (count($ruteIds) < 3) {
-            return back()
-                ->withInput()
-                ->withErrors(['rute' => 'Minimal harus 3 titik rute.']);
-        }
 
         // Buat header penugasan
         $penugasan = Penugasan::create([
@@ -69,8 +54,8 @@ class PenugasanController extends Controller
             'status'            => 'Menunggu',
         ]);
 
-        // Simpan rute dinamis ke tabel pivot penugasan_rutes
-        foreach ($ruteIds as $index => $ruteId) {
+        // Simpan rute dinamis ke tabel pivot
+        foreach ($request->rute_ids as $index => $ruteId) {
             $penugasan->rutes()->attach($ruteId, [
                 'urutan' => $index + 1,
             ]);

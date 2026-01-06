@@ -71,11 +71,11 @@
     <div class="delete-box">
 
         <div class="delete-header">
-            <span>Hapus Robot?</span>
+            <span>Hapus Data Robot?</span>
             <span class="delete-close" onclick="closeDeleteModal()">&times;</span>
         </div>
 
-        <p class="delete-text">Data robot ini tidak bisa dikembalikan setelah dihapus.</p>
+        <p class="delete-text">Data robot ini tidak bisa dipulihkan setelah dihapus.</p>
 
         <form id="deleteForm" method="POST">
             @csrf

@@ -82,7 +82,7 @@
 
                 <div class="modal-footer">
                     <button type="button" class="btn-cancel" onclick="closeEditModal()">Batal</button>
-                    <button type="submit" class="btn-save">Simpan Perubahan</button>
+                    <button type="submit" class="btn-save">Simpan</button>
                 </div>
             </form>
         </div>
@@ -92,10 +92,10 @@
     <div class="modal-backdrop" id="deleteModal">
         <div class="delete-box">
             <div class="delete-header">
-                <span>Hapus Insiden?</span>
+                <span>Hapus Laporan Insiden?</span>
                 <span style="cursor:pointer" onclick="closeDeleteModal()">&times;</span>
             </div>
-            <p style="color: #666; font-size: 14px; margin-bottom: 20px;">Data ini tidak bisa dikembalikan setelah dihapus.</p>
+            <p style="color: #666; font-size: 14px; margin-bottom: 20px;">Data ini tidak bisa dipulihkan setelah dihapus.</p>
             <form id="deleteForm" method="POST">
                 @csrf 
                 @method('DELETE')

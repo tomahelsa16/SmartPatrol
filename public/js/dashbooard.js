@@ -1,10 +1,28 @@
-// Simulate loading robot data dynamically
-const robotData = [
-    { id: 'R-001', startTime: '10:00 AM', duration: '2 hours', battery: '85%', status: 'Active', location: 'Lat: -6.174, Long: 106.829', temperature: '27°C' },
-    { id: 'R-002', startTime: '10:30 AM', duration: '1 hour 30 minutes', battery: '75%', status: 'Active', location: 'Lat: -6.174, Long: 106.830', temperature: '28°C' },
-    { id: 'R-003', startTime: '11:00 AM', duration: '1 hour', battery: '90%', status: 'Inactive', location: 'Lat: -6.175, Long: 106.828', temperature: '26°C' },
-    { id: 'R-004', startTime: '11:30 AM', duration: '30 minutes', battery: '50%', status: 'Active', location: 'Lat: -6.173, Long: 106.827', temperature: '29°C' }
-];
+// Fungsi Slider Kamera
+function moveSlide(direction) {
+    const container = document.getElementById('cameraContainer');
+    const totalCameras = container.children.length;
+    if (totalCameras <= 1) return;
+
+    let currentIndex = [...container.children].findIndex(camera => camera.style.display !== 'none');
+    if (currentIndex === -1) currentIndex = 0;
+
+    currentIndex = (currentIndex + direction + totalCameras) % totalCameras;
+    
+    Array.from(container.children).forEach((camera, index) => {
+        camera.style.display = index === currentIndex ? 'block' : 'none';
+    });
+}
+
+// Inisialisasi tampilan kamera (hanya tampilkan satu jika slider aktif)
+document.addEventListener('DOMContentLoaded', function() {
+    const container = document.getElementById('cameraContainer');
+    if (container && container.children.length > 4) {
+        Array.from(container.children).forEach((camera, index) => {
+            camera.style.display = index === 0 ? 'block' : 'none';
+        });
+    }
+});
 
 // Update total active robots count
 document.getElementById('active-robot-count').textContent = robotData.filter(robot => robot.status === 'Active').length;
