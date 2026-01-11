@@ -85,7 +85,7 @@ body {
     text-decoration: none;
     font-size: 0.95em;
     border-radius: 0;
-    transition: all var(--transition-base);
+    transition: background-color var(--transition-base), border-left var(--transition-base), color var(--transition-base), padding var(--transition-base);
     border-left: 4px solid transparent;
 }
 
@@ -198,8 +198,8 @@ body {
     padding-left: 0;
     margin: 0;
     background-color: #2663a1;
-    border-left: 4px solid transparent;
-
+    /* border-left: 4px solid transparent; */
+    transition: none !important;
     display: none;   /* JS slideDown akan handle */
     overflow: hidden;
 }

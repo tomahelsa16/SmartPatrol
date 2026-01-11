@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // ================================
     // Animasi Slide Down
     // ================================
-    function slideDown(element, duration = 250) {
+    function slideDown(element, duration = 300) {
         element.style.removeProperty('display');
         let display = window.getComputedStyle(element).display;
 
@@ -16,11 +16,15 @@ document.addEventListener('DOMContentLoaded', function () {
         let height = element.offsetHeight;
         element.style.overflow = 'hidden';
         element.style.height = '0px';
+        element.style.paddingTop = '0px';
+        element.style.paddingBottom = '0px';
 
         element.offsetHeight;
 
-        element.style.transition = `height ${duration}ms ease`;
+        element.style.transition = `height ${duration}ms ease, padding ${duration}ms ease`;
         element.style.height = height + 'px';
+        element.style.removeProperty('padding-top');
+        element.style.removeProperty('padding-bottom');
 
         element.addEventListener('transitionend', function handler() {
             element.style.removeProperty('height');
@@ -33,18 +37,21 @@ document.addEventListener('DOMContentLoaded', function () {
     // ================================
     // Animasi Slide Up
     // ================================
-    function slideUp(element, duration = 250) {
+    function slideUp(element, duration = 300) {
         element.style.height = element.offsetHeight + 'px';
         element.style.overflow = 'hidden';
-
         element.offsetHeight;
 
-        element.style.transition = `height ${duration}ms ease`;
+        element.style.transition = `height ${duration}ms ease, padding ${duration}ms ease`;
         element.style.height = '0px';
+        element.style.paddingTop = '0px';
+        element.style.paddingBottom = '0px';
 
         element.addEventListener('transitionend', function handler() {
             element.style.display = 'none';
             element.style.removeProperty('height');
+            element.style.removeProperty('padding-top');
+            element.style.removeProperty('padding-bottom');
             element.style.removeProperty('overflow');
             element.style.removeProperty('transition');
             element.removeEventListener('transitionend', handler);
@@ -77,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const isOpen = parentLi.classList.contains('open');
 
             // (Opsional) Menutup submenu lain agar tidak multiple-open
-            document.querySelectorAll('.menu-item.open').forEach(li => {
+            document.querySelectorAll('li.has-submenu.open').forEach(li => {
                 if (li !== parentLi) {
                     li.classList.remove('open');
                     const otherMenu = li.querySelector('.submenu');
